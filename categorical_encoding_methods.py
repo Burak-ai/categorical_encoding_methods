@@ -55,6 +55,7 @@ X_valid = X_valid_full[my_cols].copy()
 print(X_train.head())
 
 
+
 # Get list of categorical variables
 s = (X_train.dtypes == 'object')
 object_cols = list(s[s].index)
