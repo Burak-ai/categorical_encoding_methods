@@ -77,7 +77,6 @@ print(score_dataset(drop_X_train, drop_X_valid, y_train, y_valid))
 
 
 
-
 # Ordinal Encoding
 # Make copy to avoid changing original data 
 label_X_train = X_train.copy()
@@ -90,6 +89,7 @@ label_X_valid[object_cols] = ordinal_encoder.transform(X_valid[object_cols])
 
 print("MAE from Approach 2 (Ordinal Encoding):") 
 print(score_dataset(label_X_train, label_X_valid, y_train, y_valid))
+
 
 
 
