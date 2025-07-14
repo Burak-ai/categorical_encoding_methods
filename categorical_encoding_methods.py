@@ -26,6 +26,7 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.preprocessing import OneHotEncoder
 
+
 data = pd.read_csv("melb_data.csv")
  # Separate target from predictors
 y = data.Price
