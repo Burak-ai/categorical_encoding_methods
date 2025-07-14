@@ -1,7 +1,6 @@
 # A categorical variable takes only a limited number of values
 """ 3 Approaches
 
-
 1) Drop Categorical Variables
 The easiest approach to dealing with categorical variables is to simply 
 remove them from the dataset.This approach will only work well if the columns
@@ -78,6 +77,7 @@ print(score_dataset(drop_X_train, drop_X_valid, y_train, y_valid))
 
 
 # Ordinal Encoding
+
 # Make copy to avoid changing original data 
 label_X_train = X_train.copy()
 label_X_valid = X_valid.copy()
