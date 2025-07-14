@@ -41,7 +41,6 @@ cols_with_missing = [col for col in X_train_full.columns if X_train_full[col].is
 X_train_full.drop(cols_with_missing, axis=1, inplace=True)
 X_valid_full.drop(cols_with_missing, axis=1, inplace=True)
 
-# "Cardinality" means the number of unique values in a column
 # Select categorical columns with relatively low cardinality (convenient but arbitrary)
 low_cardinality_cols = [cname for cname in X_train_full.columns if X_train_full[cname].nunique() < 10 and 
                         X_train_full[cname].dtype == "object"]
