@@ -96,7 +96,7 @@ print(score_dataset(label_X_train, label_X_valid, y_train, y_valid))
 handle_unknown='ignore' to avoid errors when the validation data contains classes that aren't represented in the training data, and
 setting sparse=False ensures that the encoded columns are returned as a numpy array (instead of a sparse matrix)
 """
-OH_encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
+OH_encoder = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
 OH_cols_train = pd.DataFrame(OH_encoder.fit_transform(X_train[object_cols]))
 OH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[object_cols]))
 
