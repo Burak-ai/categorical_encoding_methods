@@ -216,3 +216,30 @@ high_cardinality_cols = list(set(object_cols)-set(low_cardinality_cols))
 print('Categorical columns that will be one-hot encoded:', low_cardinality_cols)
 print('\nCategorical columns that will be dropped from the dataset:', high_cardinality_cols)
 
+
+from sklearn.preprocessing import OneHotEncoder
+
+# One-hot encode only low-cardinality categorical columns
+OH_encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
+
+# Fit and transform ONLY the low-cardinality columns
+OH_cols_train = pd.DataFrame(OH_encoder.fit_transform(X_train[low_cardinality_cols]))
+OH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[low_cardinality_cols]))
+
+# Restore index
+OH_cols_train.index = X_train.index
+OH_cols_valid.index = X_valid.index
+
+# Drop all original categorical columns
+num_X_train = X_train.drop(object_cols, axis=1)
+num_X_valid = X_valid.drop(object_cols, axis=1)
+
+# Concatenate one-hot encoded columns with numeric columns
+OH_X_train = pd.concat([num_X_train, OH_cols_train], axis=1)
+OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=1)
+
+# Make sure all column names are strings
+OH_X_train.columns = OH_X_train.columns.astype(str)
+OH_X_valid.columns = OH_X_valid.columns.astype(str)
+
+
