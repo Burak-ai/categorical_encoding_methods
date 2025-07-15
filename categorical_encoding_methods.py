@@ -136,7 +136,6 @@ X.dropna(axis=0, subset=['SalePrice'], inplace=True)
 y = X.SalePrice
 X.drop(['SalePrice'], axis=1, inplace=True)
 
-# To keep things simple, we'll drop columns with missing values
 cols_with_missing = [col for col in X.columns if X[col].isnull().any()] 
 X.drop(cols_with_missing, axis=1, inplace=True)
 X_test.drop(cols_with_missing, axis=1, inplace=True)
