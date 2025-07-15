@@ -1,4 +1,3 @@
-# A categorical variable takes only a limited number of values
 """ 3 Approaches
 
 1) Drop Categorical Variables
