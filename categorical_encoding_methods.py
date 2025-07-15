@@ -217,6 +217,7 @@ print('Categorical columns that will be one-hot encoded:', low_cardinality_cols)
 print('\nCategorical columns that will be dropped from the dataset:', high_cardinality_cols)
 
 
+
 from sklearn.preprocessing import OneHotEncoder
 
 # One-hot encode only low-cardinality categorical columns
