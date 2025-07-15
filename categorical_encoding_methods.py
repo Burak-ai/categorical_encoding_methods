@@ -128,7 +128,6 @@ print(score_dataset(OH_X_train, OH_X_valid, y_train, y_valid))
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-# Read the data
 X = pd.read_csv('train.csv', index_col='Id') 
 X_test = pd.read_csv('test.csv', index_col='Id')
 
