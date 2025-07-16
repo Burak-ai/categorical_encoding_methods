@@ -1,4 +1,4 @@
-""" 3 Approaches
+""" Three Approaches
 
 1) Drop Categorical Variables
 The easiest approach to dealing with categorical variables is to simply 
