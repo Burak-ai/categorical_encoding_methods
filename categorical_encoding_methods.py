@@ -92,8 +92,6 @@ print("MAE from Approach 2 (Ordinal Encoding):")
 print(score_dataset(label_X_train, label_X_valid, y_train, y_valid))
 
 
-
-
 # Apply one-hot encoder to each column with categorical data
 """
 handle_unknown='ignore' to avoid errors when the validation data contains classes that aren't represented in the training data, and
